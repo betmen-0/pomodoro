@@ -181,5 +181,5 @@ button#reset:hover {
 button#music:hover {
     background-color: rgba(83,211,158,1);
     transform: scale(1.05);
-    
+    transition: 0.1s ease-in;
 }
