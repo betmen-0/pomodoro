@@ -52,3 +52,31 @@ const resetTimer = () => {
     saveValue();
     updateTimer();
 };
+
+start.addEventListener("click", () => {
+    startTimer();
+    isTimerOn = true;
+    background.play();
+});
+
+stop.addEventListener("click", () => {
+    stopTimer();
+    isTimerOn = false;
+    background.pause();
+});
+
+reset.addEventListener("click", () => {
+    resetTimer();
+    isTimerOn = false;
+    background.pause();
+});
+
+music.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        music.textContent = "Pause Music";
+    } else {
+        audio.pause();
+        music.textContent = "Play Music";
+    }
+});
