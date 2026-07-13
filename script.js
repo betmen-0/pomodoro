@@ -24,3 +24,31 @@ const updateTimer = () => {
     :
     ${seconds.toString().padStart(2,"0")}`;
 };
+
+const startTimer = () => {
+    if (isTimerOn === false) {
+    interval = setInterval(() => {
+
+        timeLeft--;
+        updateTimer();
+
+        if(timeLeft === 0) {
+            clearInterval(interval);
+            isTimerOn = false;
+            alert("Time's up!");
+            updateTimer() ;
+        }
+    }, 1000)
+    }
+};
+
+const stopTimer = () => {
+    clearInterval(interval);
+    isTimerOn = false;
+}
+
+const resetTimer = () => {
+    clearInterval(interval);
+    saveValue();
+    updateTimer();
+};
